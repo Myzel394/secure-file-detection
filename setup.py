@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 long_description = "With this package you can easily securely detect the true type of a file. The true type is " \
                    "determined by analyzing the data of the type - not by just looking at the header."
 
-current_version = "0.1.1"
+current_version = "0.1.2"
 
 setup(
     name="secure-file-detection",

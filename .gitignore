@@ -1,4 +1,6 @@
 venv
+dist
+secure_file_detection.egg-info
 
 .idea
 */.idea
