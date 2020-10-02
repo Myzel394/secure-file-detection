@@ -2,14 +2,13 @@ from typing import *
 
 import magic
 
-import constants
-import validators
-from exceptions import *
-from typing_types import *
-from utils import *
+from secure_file_detection import constants, validators
+from secure_file_detection.exceptions import *
+from secure_file_detection.typing_types import *
+from secure_file_detection.utils import *
 
 __all__ = [
-    "detect_true_type"
+    "detect_true_type", "is_file_manipulated"
 ]
 
 CUSTOM_FUNC_MAP = {
@@ -64,7 +63,13 @@ def detect_true_type(file: PathLike, *args, **kwargs) -> str:
     # Return mimetype, it is correct
     return mimetype
     
-    
+
+def is_file_manipulated(file: PathLike) -> bool:
+    try:
+        detect_true_type(file)
+    except ManipulatedFileError:
+        return False
+    return True
     
     
     

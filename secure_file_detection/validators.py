@@ -14,8 +14,8 @@ from pdfminer.psparser import PSException
 from pptx import Presentation
 from svglib.svglib import CircularRefError, svg2rlg
 
-from exceptions import *
-from utils import *
+from secure_file_detection.exceptions import *
+from secure_file_detection.utils import *
 
 
 def _easy_check(real_type: str, expected_type: str):

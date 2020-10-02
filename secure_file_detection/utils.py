@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import *
 
-from typing_types import PathLike
+from secure_file_detection.typing_types import PathLike
 
 __all__ = [
     "get_path", "get_func_name", "get_type_from_mimetype", "construct_error_message"
