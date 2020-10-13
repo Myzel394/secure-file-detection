@@ -23,11 +23,11 @@ class SeeMimeTypes(unittest.TestCase):
             "../tests_folder/manipulated_from_pdf.pdf",
             "../tests_folder/manipulated_from_image.jpg",
             "../tests_folder/manipulated_from_image.pdf",
-            "../tests_folder/encoding_koi8.txt"
         ]
         
         for file in files:
             with self.assertRaises((ManipulatedFileError, MimeTypeNotDetectable)):
+                print(file)
                 detector.detect_true_type(file)
         
 

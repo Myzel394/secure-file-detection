@@ -50,10 +50,11 @@ def _easy_text_check(file: Path, allowed_encodings: Optional[Set[str]] = None):
     """Validates the encoding."""
     DEFAULT_ENCODINGS = {
         *(
-            f"Windows-{number}"
+            f"windows-{number}"
             for number in range(1250, 1255 + 1)
         ),
-        "UTF-8", "UTF-16", "UTF-32",
+        "utf-8", "utf-16", "utf-32",
+        "ascii"
     }
     
     # Values
@@ -63,7 +64,7 @@ def _easy_text_check(file: Path, allowed_encodings: Optional[Set[str]] = None):
         data = opened_file.read()
     
     result = chardet.detect(data)
-    if result["encoding"] not in allowed_encodings:
+    if result["encoding"].lower() not in allowed_encodings:
         raise ManipulatedFileError("The file has an disallowed encoding type!")
 
 
