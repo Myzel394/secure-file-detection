@@ -68,8 +68,8 @@ def is_file_manipulated(file: PathLike) -> bool:
     try:
         detect_true_type(file)
     except ManipulatedFileError:
-        return False
-    return True
+        return True
+    return False
     
     
     
