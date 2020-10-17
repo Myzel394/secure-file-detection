@@ -25,7 +25,9 @@ def get_validator_func(mimetype: str) -> Callable:
     if mimetype in CUSTOM_FUNC_MAP:
         func_name = CUSTOM_FUNC_MAP[mimetype]
     else:
-        func_name = "check_" + get_func_name(mimetype)
+        func_name = get_func_name(mimetype)
+    
+    func_name = "check_" + func_name
     
     return getattr(validators, func_name)
 
